@@ -1,0 +1,31 @@
+name: repo checks
+
+# MATLAB cannot run on a public runner (no licence), so CI verifies repository
+# hygiene only.  The physics suites (test_core, smoke_gui, fuzz_probe) are run
+# locally in MATLAB; their results are recorded in README.md and docs/STATUS.md.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Repository hygiene checks
+        run: python tests/repo_checks.py
+
+      - name: Show what CI does NOT cover
+        run: |
+          echo "Physics verification is run locally in MATLAB:"
+          echo "  tests/test_core.m   T1-T12"
+          echo "  tests/smoke_gui.m   49 headless GUI checks"
+          echo "  tests/fuzz_probe.m  106-state sweep"

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "EM Virtual Lab: an interactive MATLAB laboratory for plane-wave reflection and transmission at a media boundary"
+abstract: >-
+  A toolbox-free MATLAB GUI that visualises electromagnetic plane-wave
+  interaction with a planar boundary: TE/TM Fresnel coefficients, Brewster and
+  critical angles, total internal reflection and the evanescent field, standing
+  waves on a perfect conductor, and lossy or magnetic media. Every displayed
+  quantity is verified against closed-form theory.
+type: software
+license: MIT
+version: 1.0.0
+date-released: "2026-11-19"
+repository-code: "https://github.com/mmd-kad/em-virtual-lab"
+keywords:
+  - electromagnetics
+  - Fresnel equations
+  - plane wave reflection
+  - total internal reflection
+  - standing wave
+  - MATLAB GUI
+  - physics education

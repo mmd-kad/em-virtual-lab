@@ -4,6 +4,9 @@
 ![Toolboxes](https://img.shields.io/badge/toolboxes-none%20required-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Tests](https://img.shields.io/badge/tests-T1--T12%20passing-success)
+![CI](https://github.com/mmd-kad/em-virtual-lab/actions/workflows/repo-checks.yml/badge.svg)
+
+**English** · **[فارسی](README.fa.md)** · **[Persian PDF guide](docs/EM_VirtualLab_UserGuide_FA.pdf)**
 
 Interactive visualisation of electromagnetic plane-wave interaction with the
 boundary between two media: **reflection and refraction, TE/TM coefficients,
@@ -23,6 +26,20 @@ number the app prints can be traced to a textbook formula.
 - Ten presets, including total reflection, a PEC, FR-4, sea water and a magnetic medium where the Brewster angle moves to TE
 - Every displayed quantity is checked against theory: **T1–T12** physics tests, a **49-check** headless GUI test and a **106-state** fuzz sweep
 - Persian (RTL) PDF user guide built with XeLaTeX, with a real table of contents and 17 figures
+
+---
+
+## Contents
+
+1. [How to run](#1-how-to-run-three-steps)
+2. [What is in the folder](#2-what-is-in-the-folder)
+3. [Medium parameters](#3-medium-parameters--the-main-controls)
+4. [Assumptions and deviations](#4-assumptions-d1d7-of-the-specification-and-deviations)
+5. [Requirements coverage](#5-requirements-r1r12--where-to-see-them)
+6. [Verification status](#6-verification-status-what-was-actually-executed)
+7. [Limitations](#7-limitations)
+8. [License](#8-license)
+9. [How this was built](#9-how-this-built)
 
 ---
 
@@ -206,6 +223,11 @@ Executed on this machine, MATLAB R2024a (24.1.0.2628055):
   30 animation frames are stepped each time, every rendered array and the
   numeric panel are checked for NaN/Inf, **every widget callback is fired once**,
   and the app is closed **through the window's own CloseRequestFcn**.
+* `tests/repo_checks.py` — repository hygiene (ASCII-only `.m` files, no private
+  paths, every README link resolves, Python helpers compile, no raw Unicode math
+  in the guide). This is what the GitHub Actions workflow runs; MATLAB itself
+  cannot run on a public runner, so the three suites above are executed locally
+  and their results recorded here.
 * `tests/fuzz_probe.m` — diagnostic sweep: **106 states, 0 failures** (see
   `docs/STATUS.md`, entries 18 and 21, for the defects it found and fixed; it
   also checks that no plotted array is complex, since MATLAB plots only the real
