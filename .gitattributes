@@ -1,0 +1,10 @@
+# normalise line endings in the repo, keep binaries untouched
+* text=auto eol=lf
+*.m     text eol=lf
+*.py    text eol=lf
+*.md    text eol=lf
+*.tex   text eol=lf
+*.png   binary
+*.pdf   binary
+*.docx  binary
+*.zip   binary
