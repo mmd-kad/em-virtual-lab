@@ -7,6 +7,9 @@ abstract: >-
   critical angles, total internal reflection and the evanescent field, standing
   waves on a perfect conductor, and lossy or magnetic media. Every displayed
   quantity is verified against closed-form theory.
+authors:
+  - name: "mmd kad"
+    alias: mmd-kad
 type: software
 license: MIT
 version: 1.0.0
